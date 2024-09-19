@@ -85,19 +85,26 @@ body {
 }
 
 /* Grid */
-#item-grid {
+#item-list {
   width: 100rem;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2rem
-}
-
-#item-grid img {
-  max-height: 10rem;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-box {
-  border: 2px solid #ed1b24;
-  height: 10rem;
-  width: 16rem;
+  border: 2px solid #000000;
+  border-width: 4px 48px;
+  border-radius: 2rem;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  height: 20rem;
+}
+
+.item-box img {
+  position: absolute;
+  top: -225px;
+  left: 0;
+  max-width: 100%;
 }
