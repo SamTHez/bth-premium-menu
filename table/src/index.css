@@ -57,8 +57,8 @@ table {
 
 body {
     box-sizing: border-box;
-    background-color: #adb3be;
     min-height: 100vh;
+    font-family: 'system-ui';
 }
 
 *, *::before, *::after {
@@ -68,6 +68,24 @@ body {
 /* Data Area */
 #data-area {
 
+}
+
+#data-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#data-controls label {
+    font-size: 2rem;
+}
+
+#data-controls * {
+    margin: 1rem;
+}
+
+#data-controls button {
+    scale: 1.2;
 }
 
 #data-table {
@@ -87,22 +105,25 @@ td:first-of-type {
     padding: 0.5ch 1ch;
 }
 
-tbody tr:nth-of-type(odd) {
-    background-color: #fdb3be;
+.toggle-yes {
+    background-color: rgb(158, 247, 158);
+}
+
+.toggle-no {
+    background-color: rgb(247, 158, 158);
 }
 
 .toggle-yes, .toggle-no {
     width: 100%;
     padding: 4px 16px;
     border: none;
+    opacity: 0.8;
+    font-size: 2rem;
 }
 
-.toggle-yes {
-    background-color: rgb(160, 255, 160);
-}
-
-.toggle-no {
-    background-color: rgb(255, 167, 167)
+.toggle-yes:hover, .toggle-no:hover {
+    opacity: 1;
+    font-weight: 700;
 }
 
 th {
@@ -113,4 +134,31 @@ th {
 .table-item-name {
     font-size: 1.8rem;
     text-align: right;
+}
+
+select {
+    font-size: 1.6rem;
+}
+
+/* Header */
+#header {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem;
+    width: fit-content;
+}
+
+#header * {
+    margin: 0 3rem;
+    padding: 0.5rem 1rem;
+}
+
+#header h1 {
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+#header button {
+    font-size: 2rem;
 }

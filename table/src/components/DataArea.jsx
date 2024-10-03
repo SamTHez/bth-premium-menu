@@ -31,7 +31,7 @@ const PopulatedTable = ({data, location, updateData}) => {
             <thead>
                 <tr>
                     <th>Item Name</th>
-                    <th>Available</th>
+                    <th>Visible</th>
                     <th>Favorite</th>
                 </tr>
             </thead>
@@ -98,29 +98,30 @@ const DataArea = () => {
             }
             return item;
         })
-        console.log(updatedData);
         setData(updatedData);
         if(!isChanged) {setIsChanged(true)};
     }
 
     return(
     <div id='data-area'>
-        <label htmlFor="location-select">Select your location:</label>
-        <select name='location' id='location-select' value={location} onChange={(e) => {setlocation(e.target.value)}}>
-            <option value="Horsham">Horsham</option>
-            <option value="Paramus">Paramus</option>
-            <option value="Brooklyn">Brooklyn</option>
-            <option value="Freehold">Freehold</option>
-            <option value="Bloomfield">Bloomfield</option>
-            <option value="Old Bridge">Old Bridge</option>
-            <option value="Toms River">Toms River</option>
-            <option value="Woodbridge">Woodbridge</option>
-            <option value="Cherry Hill">Cherry Hill</option>
-            <option value="Bucks County">Bucks County</option>
-            <option value="Philadelphia">Philadelphia</option>
-            <option value="King of Prussia">King of Prussia</option>
-        </select>
-        <button onClick={() => {if(isChanged){saveData();}}}>Save</button>
+        <div id='data-controls'>
+            <label htmlFor="location-select">Select your location:</label>
+            <select name='location' id='location-select' value={location} onChange={(e) => {setlocation(e.target.value)}}>
+                <option value="Horsham">Horsham</option>
+                <option value="Paramus">Paramus</option>
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="Freehold">Freehold</option>
+                <option value="Bloomfield">Bloomfield</option>
+                <option value="Old Bridge">Old Bridge</option>
+                <option value="Toms River">Toms River</option>
+                <option value="Woodbridge">Woodbridge</option>
+                <option value="Cherry Hill">Cherry Hill</option>
+                <option value="Bucks County">Bucks County</option>
+                <option value="Philadelphia">Philadelphia</option>
+                <option value="King of Prussia">King of Prussia</option>
+            </select>
+            <button disabled={!isChanged} onClick={() => {if(isChanged){saveData();}}}>Save</button>
+        </div>
         {(data) && <PopulatedTable data={data} location={location} updateData={updateData}/>}
     </div>
     )
