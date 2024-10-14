@@ -105,3 +105,15 @@ body {
   border: solid 2px black;
   font-size: 1.8rem;
 }
+
+/* Item List */
+#item-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Item Box */
+.item-box {
+  border: 2px solid #ED1B24;
+}
