@@ -1,16 +1,9 @@
 import { useState, useEffect } from 'react'
 import supabase from '../client.js'
-
-const ItemBox = () => {
-    return(
-        <div className='item-box'>
-        
-        </div>
-    )
-}
+import Item from './Item.jsx'
 
 const ItemList = () => {
-    const [data, setData] = useState();
+    const [items, setItems] = useState(false);
 
     const fetchData = async () => {
         const { data, error } = await supabase
@@ -19,7 +12,9 @@ const ItemList = () => {
             .order('id',{ascending:true})
         
         if(data) {
-            setData(data);
+            // setItems(data.map((item) => <Item key={item.item_name} name={item.item_name} image={item.img_url}/>));
+            setItems(data.map((item) => <Item key={item.item_name} name={item.item_name} image={'../assets/IMG_2858.jpg'}/>));
+
         }
         if(error) {
             console.log(`Error: ${error}`);
@@ -32,7 +27,7 @@ const ItemList = () => {
 
     return(
         <div id="item-list">
-
+            {items[0]}
         </div>
     ) 
 }

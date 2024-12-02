@@ -70,15 +70,14 @@ body {
 
 /* Header */
 #header {
-  position: absolute;
-  top: 0;
   background-color: #ED1B24;
   width: 100vw;
-  min-height: 2rem;
+  height: fit-content;
+  padding: 1rem ;
 }
 
 #header * {
-  margin: 8px;
+  margin: 0 .8rem .8rem .8rem
 }
 
 #header h1 {
